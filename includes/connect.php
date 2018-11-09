@@ -16,7 +16,7 @@ if (!$conn) {
 
 
 //go and get all data from the database
-//$myQuery = "SELECT * FROM mainmodel";     commenting out to isolate query for one item below
+//$myQuery = "SELECT * FROM mainmodel";     //commenting out to isolate query for one item below
 //$result = mysqli_query($conn, $myQuery);
 //$rows = array ();
 
