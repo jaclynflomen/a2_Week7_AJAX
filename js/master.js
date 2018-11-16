@@ -11,12 +11,27 @@ const vm = new Vue({
         modeldetails : ""
     },
 
+    mounted : function(){
+        console.log('vue is ready to go on the page');
+
+        //trigger an ajax call with a mocked click event
+        document.querySelector('#F55').click();
+    },
+
+    beforeUpdate : function () {
+        console.log('things are gonna change...');
+    },
+
+    updated : function() {
+        console.log('things are different now');
+    },
+
     methods : {
         getData(e) {
-            debugger;
-            let targetURL = e.currentTarget.id;
+            //debugger;
+            let targetURL = `./includes/connect.php?modelNo=${e.currentTarget.id}`;
              //gets the id of the element via the event object
-             fetch(`./includes/connect.php?modelNo=${targetURL}`) // go get the data and bring it back! good doggy
+             fetch(targetURL) // go get the data and bring it back! good doggy
            .then(res => res.json()) //turn the result into a plain JS object
            .then(data => {
                console.log(data);
